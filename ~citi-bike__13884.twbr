@@ -1,0 +1,1777 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0326.1623                               -->
+<workbook source-build='2020.1.2 (20201.20.0326.1623)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='citi-bike-analytics' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style-theme name='classic' />
+  <datasources>
+    <datasource caption='citi_bike' inline='true' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='citi_bike' name='textscan.0vwhm2i00kxans1ekc9wb1xxbcb2'>
+            <connection class='textscan' directory='C:/Users/jbogg/Desktop/citi-bike-analytics/data' filename='citi_bike.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0vwhm2i00kxans1ekc9wb1xxbcb2' name='citi_bike.csv' table='[citi_bike#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='trip_duration' ordinal='1' />
+            <column datatype='date' name='start_date' ordinal='2' />
+            <column datatype='datetime' name='start_time' ordinal='3' />
+            <column datatype='date' name='stop_date' ordinal='4' />
+            <column datatype='datetime' name='stop_time' ordinal='5' />
+            <column datatype='integer' name='start_station_id' ordinal='6' />
+            <column datatype='string' name='start_station_name' ordinal='7' />
+            <column datatype='real' name='start_station_latitude' ordinal='8' />
+            <column datatype='real' name='start_station_longitude' ordinal='9' />
+            <column datatype='integer' name='end_station_id' ordinal='10' />
+            <column datatype='string' name='end_station_name' ordinal='11' />
+            <column datatype='real' name='end_station_latitude' ordinal='12' />
+            <column datatype='real' name='end_station_longitude' ordinal='13' />
+            <column datatype='integer' name='bike_id' ordinal='14' />
+            <column datatype='string' name='user_type' ordinal='15' />
+            <column datatype='integer' name='birth_year' ordinal='16' />
+            <column datatype='string' name='gender' ordinal='17' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_duration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[trip_duration]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>trip_duration</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[start_date]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>start_date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[start_time]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>start_time</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[stop_date]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>stop_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[stop_time]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>stop_time</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_station_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[start_station_id]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>start_station_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_station_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[start_station_name]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>start_station_name</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_station_latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[start_station_latitude]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>start_station_latitude</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_station_longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[start_station_longitude]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>start_station_longitude</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_station_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[end_station_id]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>end_station_id</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_station_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[end_station_name]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>end_station_name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_station_latitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[end_station_latitude]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>end_station_latitude</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>end_station_longitude</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[end_station_longitude]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>end_station_longitude</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bike_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[bike_id]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>bike_id</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[user_type]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>user_type</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>birth_year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[birth_year]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>birth_year</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[citi_bike.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Male' datatype='boolean' name='[Calculation_1569504516844769292]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[gender]==&quot;male&quot;' />
+      </column>
+      <column caption='Female' datatype='boolean' name='[Calculation_1569504516845006861]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[gender]==&quot;female&quot;' />
+      </column>
+      <column aggregation='CountD' caption='Gender (copy)' datatype='string' default-role='measure' default-type='quantitative' name='[Gender (copy)_1551208641646665728]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[gender]' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Bike Id' datatype='integer' name='[bike_id]' role='dimension' type='ordinal' />
+      <column caption='Birth Year' datatype='integer' name='[birth_year]' role='dimension' type='quantitative' />
+      <column caption='End Station Id' datatype='integer' name='[end_station_id]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='End Station Latitude' datatype='real' name='[end_station_latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='End Station Longitude' datatype='real' name='[end_station_longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='End Station Name' datatype='string' name='[end_station_name]' role='dimension' type='nominal' />
+      <column aggregation='CountD' caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Start Date' datatype='date' name='[start_date]' role='dimension' type='ordinal' />
+      <column caption='Start Station Id' datatype='integer' name='[start_station_id]' role='dimension' type='ordinal' />
+      <column aggregation='Avg' caption='Start Station Latitude' datatype='real' name='[start_station_latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Start Station Longitude' datatype='real' name='[start_station_longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Start Station Name' datatype='string' name='[start_station_name]' role='dimension' type='nominal' />
+      <column caption='Start Time' datatype='datetime' default-format='*HH:MM:SS' name='[start_time]' role='dimension' type='ordinal' />
+      <column caption='Stop Date' datatype='date' name='[stop_date]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Stop Time' datatype='datetime' name='[stop_time]' role='dimension' type='ordinal' />
+      <column caption='Trip Duration' datatype='integer' name='[trip_duration]' role='measure' type='quantitative' />
+      <column caption='User Type' datatype='string' name='[user_type]' role='dimension' type='nominal' />
+      <column-instance column='[trip_duration]' derivation='Avg' name='[avg:trip_duration:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[start_station_id]' derivation='Count' name='[cnt:start_station_id:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/jbogg/Desktop/citi-bike-analytics/citi_bike.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>F1</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[F1]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>F1</remote-alias>
+              <ordinal>0</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>144835</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_duration</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[trip_duration]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>trip_duration</remote-alias>
+              <ordinal>1</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6424</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[start_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_date</remote-alias>
+              <ordinal>2</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>637</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_time</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[start_time]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_time</remote-alias>
+              <ordinal>3</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>136569</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stop_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[stop_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stop_date</remote-alias>
+              <ordinal>4</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>637</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stop_time</remote-name>
+              <remote-type>134</remote-type>
+              <local-name>[stop_time]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>stop_time</remote-alias>
+              <ordinal>5</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Hour</aggregation>
+              <approx-count>144835</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_station_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[start_station_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_station_id</remote-alias>
+              <ordinal>6</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_station_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[start_station_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_station_name</remote-alias>
+              <ordinal>7</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_station_latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[start_station_latitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_station_latitude</remote-alias>
+              <ordinal>8</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>53</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_station_longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[start_station_longitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>start_station_longitude</remote-alias>
+              <ordinal>9</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>53</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>end_station_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[end_station_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>end_station_id</remote-alias>
+              <ordinal>10</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>65</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>end_station_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[end_station_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>end_station_name</remote-alias>
+              <ordinal>11</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>65</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>end_station_latitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[end_station_latitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>end_station_latitude</remote-alias>
+              <ordinal>12</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>66</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>end_station_longitude</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[end_station_longitude]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>end_station_longitude</remote-alias>
+              <ordinal>13</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>66</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>bike_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[bike_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>bike_id</remote-alias>
+              <ordinal>14</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1182</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>user_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[user_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_type</remote-alias>
+              <ordinal>15</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>birth_year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[birth_year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>birth_year</remote-alias>
+              <ordinal>16</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>88</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>17</ordinal>
+              <family>citi_bike.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.580605' measure-ordering='alphabetic' measure-percentage='0.419395' rowDisplayCount='100' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:gender:nk]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;female&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;unknown&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;male&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#1f77b4'>
+              <bucket>&quot;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_station_id:qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[sum:Number of Records:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Gender-Trip-Dur'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[trip_duration]' derivation='Avg' name='[avg:trip_duration:qk]' pivot='key' type='quantitative' />
+            <column aggregation='CountD' caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[start_date]' derivation='Month' name='[mn:start_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column caption='Start Date' datatype='date' name='[start_date]' role='dimension' type='ordinal' />
+            <column caption='Trip Duration' datatype='integer' name='[trip_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk] * [federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk])</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[mn:start_date:ok]</cols>
+      </table>
+      <simple-id uuid='{946C99AE-7E90-425E-8C7D-BFF5DEE25345}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[trip_duration]' derivation='Avg' name='[avg:trip_duration:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_station_id]' derivation='Count' name='[cnt:start_station_id:qk]' pivot='key' type='quantitative' />
+            <column aggregation='CountD' caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column caption='Start Station Id' datatype='integer' name='[start_station_id]' role='dimension' type='ordinal' />
+            <column caption='Trip Duration' datatype='integer' name='[trip_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:gender:nk]' member='&quot;female&quot;' />
+              <groupfilter function='member' level='[none:gender:nk]' member='&quot;male&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='streets' />
+            <format attr='wrap' value='false' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_station_id:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk] + [federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_station_id:qk])</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]</cols>
+      </table>
+      <simple-id uuid='{0F7AD86D-E438-4222-AC99-07D68C339E30}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[start_station_id]' derivation='None' name='[none:start_station_id:ok]' pivot='key' type='ordinal' />
+            <column caption='Start Station Id' datatype='integer' name='[start_station_id]' role='dimension' type='ordinal' />
+            <column caption='Start Time' datatype='datetime' default-format='*HH:MM:SS' name='[start_time]' role='dimension' type='ordinal' />
+            <column-instance column='[start_time]' derivation='Minute-Trunc' name='[tmi:start_time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_id:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_id:ok]</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[tmi:start_time:qk]</cols>
+      </table>
+      <simple-id uuid='{C2AAF1C2-5EA4-4C21-99C7-4AB4D0D48133}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[start_station_latitude]' derivation='Avg' name='[avg:start_station_latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_station_longitude]' derivation='Avg' name='[avg:start_station_longitude:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='Start Station Latitude' datatype='real' name='[start_station_latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Start Station Longitude' datatype='real' name='[start_station_longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Start Time' datatype='datetime' default-format='*HH:MM:SS' name='[start_time]' role='dimension' type='ordinal' />
+            <column-instance column='[start_time]' derivation='Minute-Trunc' name='[tmi:start_time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:start_station_longitude:qk]' field-type='quantitative' max='-8241384.5438845763' min='-8244487.3130526049' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:start_station_latitude:qk]' field-type='quantitative' max='4972636.51188548' min='4970863.5008530607' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='streets' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[tmi:start_time:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:start_station_latitude:qk]</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:start_station_longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{06AE6F5B-0C64-4C3A-87F7-191E699BEB65}' />
+    </worksheet>
+    <worksheet name='Sheet 8 (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[end_station_latitude]' derivation='Avg' name='[avg:end_station_latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[end_station_longitude]' derivation='Avg' name='[avg:end_station_longitude:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='End Station Latitude' datatype='real' name='[end_station_latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='End Station Longitude' datatype='real' name='[end_station_longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Start Time' datatype='datetime' default-format='*HH:MM:SS' name='[start_time]' role='dimension' type='ordinal' />
+            <column-instance column='[start_time]' derivation='Minute-Trunc' name='[tmi:start_time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:end_station_longitude:qk]' field-type='quantitative' max='-8241389.4303604402' min='-8244491.9526783992' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:end_station_latitude:qk]' field-type='quantitative' max='4972634.8769096127' min='4970862.006934382' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='streets' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[tmi:start_time:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:end_station_latitude:qk]</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:end_station_longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{549F9654-CEFB-4E62-BEC7-6C44EC5AA1AE}' />
+    </worksheet>
+    <worksheet name='Start-Pop'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[start_station_id]' derivation='Attribute' name='[attr:start_station_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_station_name]' derivation='Attribute' name='[attr:start_station_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[start_date]' derivation='Count' name='[cnt:start_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_station_latitude]' derivation='None' name='[none:start_station_latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_station_longitude]' derivation='None' name='[none:start_station_longitude:qk]' pivot='key' type='quantitative' />
+            <column caption='Start Date' datatype='date' name='[start_date]' role='dimension' type='ordinal' />
+            <column caption='Start Station Id' datatype='integer' name='[start_station_id]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='Start Station Latitude' datatype='real' name='[start_station_latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Start Station Longitude' datatype='real' name='[start_station_longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='Start Station Name' datatype='string' name='[start_station_name]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_longitude:qk]' field-type='quantitative' max='-8237674.4770812318' min='-8249454.6715480546' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_latitude:qk]' field-type='quantitative' max='4974044.3136406327' min='4969129.8766679177' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='true' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='streets' />
+            <format attr='wrap' value='false' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-temperatur-light' />
+            <format attr='geo-area-type' value='Zip Code' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' />
+              <size column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' />
+              <tooltip column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:start_station_name:nk]' />
+              <tooltip column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:start_station_id:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Start Station Id:&#9;</run>
+                <run bold='true'>&lt;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:start_station_id:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Start Station Name:&#9;</run>
+                <run bold='true'>&lt;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:start_station_name:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Count of Start Date:&#9;</run>
+                <run bold='true'>&lt;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#1b1b1b' />
+                <format attr='has-halo' value='true' />
+                <format attr='halo-color' value='#a7acad' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_latitude:qk]</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{1236B81E-6FBC-45FF-BE9D-5909AA433B67}' />
+    </worksheet>
+    <worksheet name='Starts-By-Gender'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[gender]' derivation='Count' name='[cnt:gender:qk]' pivot='key' type='quantitative' />
+            <column aggregation='CountD' caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column caption='Start Date' datatype='date' name='[start_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_date]' derivation='Week-Trunc' name='[twk:start_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:gender:qk]' included-values='in-range' />
+          <slices>
+            <column>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:gender:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk] * [federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[sum:Number of Records:qk])</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[twk:start_date:qk]</cols>
+      </table>
+      <simple-id uuid='{4BCBC4D4-3DE3-4DB7-B46A-76D340DE09F5}' />
+    </worksheet>
+    <worksheet name='Starts-VS-Dur'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[trip_duration]' derivation='Avg' name='[avg:trip_duration:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[start_date]' derivation='Month' name='[mn:start_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Start Date' datatype='date' name='[start_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+            <column caption='Trip Duration' datatype='integer' name='[trip_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[sum:Number of Records:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[sum:Number of Records:qk] + [federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk])</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[mn:start_date:ok]</cols>
+      </table>
+      <simple-id uuid='{CEB956F7-CF28-4C4A-96C6-EF897A44D05E}' />
+    </worksheet>
+    <worksheet name='Stop-Pop'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[end_station_id]' derivation='Attribute' name='[attr:end_station_id:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[end_station_name]' derivation='Attribute' name='[attr:end_station_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[stop_date]' derivation='Count' name='[cnt:stop_date:qk]' pivot='key' type='quantitative' />
+            <column caption='End Station Id' datatype='integer' name='[end_station_id]' role='dimension' type='ordinal' />
+            <column aggregation='Avg' caption='End Station Latitude' datatype='real' name='[end_station_latitude]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='End Station Longitude' datatype='real' name='[end_station_longitude]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column caption='End Station Name' datatype='string' name='[end_station_name]' role='dimension' type='nominal' />
+            <column-instance column='[end_station_latitude]' derivation='None' name='[none:end_station_latitude:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[end_station_longitude]' derivation='None' name='[none:end_station_longitude:qk]' pivot='key' type='quantitative' />
+            <column caption='Stop Date' datatype='date' name='[stop_date]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:end_station_longitude:qk]' field-type='quantitative' max='-8237768.5602428978' min='-8245083.7934800508' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:end_station_latitude:qk]' field-type='quantitative' max='4973453.4000248658' min='4969273.2665596278' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' palette='sunrise_sunset_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='true' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='streets' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-temperatur-light' />
+            <format attr='geo-area-type' value='Zip Code' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' />
+              <size column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' />
+              <tooltip column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:end_station_name:nk]' />
+              <tooltip column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:end_station_id:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>End Station Id:&#9;</run>
+                <run bold='true'>&lt;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:end_station_id:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>End Station Name:&#9;</run>
+                <run bold='true'>&lt;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[attr:end_station_name:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Count of Stop Date:&#9;</run>
+                <run bold='true'>&lt;[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#1b1b1b' />
+                <format attr='has-halo' value='true' />
+                <format attr='halo-color' value='#a7acad' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:end_station_latitude:qk]</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:end_station_longitude:qk]</cols>
+      </table>
+      <simple-id uuid='{1EEAF56E-DDD7-4013-B8F6-61B83A22ED38}' />
+    </worksheet>
+    <worksheet name='Trip-Dur-By-Age'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='citi_bike' name='federated.1mgfd5k17057kj1e3ie5r0u0sh8d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mgfd5k17057kj1e3ie5r0u0sh8d'>
+            <column-instance column='[trip_duration]' derivation='Avg' name='[avg:trip_duration:qk]' pivot='key' type='quantitative' />
+            <column caption='Birth Year' datatype='integer' name='[birth_year]' role='dimension' type='quantitative' />
+            <column aggregation='CountD' caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[birth_year]' derivation='None' name='[none:birth_year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column caption='Trip Duration' datatype='integer' name='[trip_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk] * [federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[avg:trip_duration:qk])</rows>
+        <cols>[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:birth_year:qk]</cols>
+      </table>
+      <simple-id uuid='{DD2934EC-21F0-4ECA-A289-A75CFEE48BBD}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='7' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='5' type='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='49000' id='3' name='Start-Pop' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='11' name='Stop-Pop' w='82400' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='14' is-fixed='true' type='layout-basic' w='16000' x='83200' y='1000'>
+              <zone h='62250' id='16' type='layout-basic' w='16000' x='83200' y='1000'>
+                <zone h='43250' id='6' param='vert' type='layout-flow' w='16000' x='83200' y='1000'>
+                  <zone fixed-size='167' h='21875' id='9' is-fixed='true' name='Start-Pop' pane-specification-id='2' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' single-line='true' type='color' w='16000' x='83200' y='1000'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone h='19000' id='17' param='vert' type='layout-flow' w='16000' x='83200' y='44250'>
+                  <zone h='15875' id='10' name='Start-Pop' pane-specification-id='2' type='map' w='16000' x='83200' y='44250'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+              <zone h='35750' id='15' param='vert' type='layout-flow' w='16000' x='83200' y='63250'>
+                <zone h='6125' id='13' name='Stop-Pop' pane-specification-id='4' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' single-line='true' type='color' w='16000' x='83200' y='63250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='800' minheight='800' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='37' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='36' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='49000' id='3' is-fixed='true' name='Start-Pop' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='167' h='21875' id='9' name='Start-Pop' pane-specification-id='2' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' single-line='true' type='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='15875' id='10' name='Start-Pop' pane-specification-id='2' type='map' w='16000' x='83200' y='44250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='11' is-fixed='true' name='Stop-Pop' w='82400' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6125' id='13' name='Stop-Pop' pane-specification-id='4' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' single-line='true' type='color' w='16000' x='83200' y='63250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{07313611-5D3E-4C77-BEBC-38A7A7D84766}' />
+    </dashboard>
+    <dashboard name='Story 1' type='storyboard'>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#d4d4d4' />
+        </style-rule>
+        <style-rule element='story-point-caption'>
+          <format attr='width' value='438' />
+          <format attr='font-size' value='24' />
+          <format attr='background-color' value='#d4d4d4' />
+        </style-rule>
+        <style-rule element='story-title'>
+          <format attr='color' value='#000000' />
+          <format attr='background-color' value='#00000000' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98230' id='1' param='vert' removable='false' type='layout-flow' w='99064' x='468' y='885'>
+            <zone h='3429' id='3' type='title' w='99064' x='468' y='885' />
+            <zone h='11173' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='99064' x='468' y='4314' />
+            <zone h='83628' id='5' paired-zone-id='4' removable='false' type='flipboard' w='99064' x='468' y='15487'>
+              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='     2019 Station Popularity' captured-sheet='Dashboard 1' id='1'>
+                    <currentDeltas>
+                      <worksheet name='Start-Pop'>
+                        <style delta-type='added'>
+                          <style-rule element='axis'>
+                            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_latitude:qk]' field-type='quantitative' max='4976086.0169275394' min='4967413.9455731772' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+                            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_longitude:qk]' field-type='quantitative' max='-8235506.4290081887' min='-8255359.6264300877' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+                          </style-rule>
+                        </style>
+                      </worksheet>
+                      <worksheet name='Stop-Pop'>
+                        <style delta-type='added'>
+                          <style-rule element='axis'>
+                            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:end_station_latitude:qk]' field-type='quantitative' max='4975969.9028904689' min='4963363.560251113' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+                            <encoding attr='space' class='0' field='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:end_station_longitude:qk]' field-type='quantitative' max='-8230051.631848908' min='-8258911.6583593469' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+                          </style-rule>
+                        </style>
+                      </worksheet>
+                    </currentDeltas>
+                    <capturedDeltas />
+                  </story-point>
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{5B3F2B2F-D07A-45A4-AF10-7DAC49B6193B}' />
+    </dashboard>
+    <dashboard name='Story 2' type='storyboard'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98230' id='1' param='vert' removable='false' type='layout-flow' w='99064' x='468' y='885'>
+            <zone h='3429' id='3' type='title' w='99064' x='468' y='885' />
+            <zone h='11173' id='4' is-fixed='true' paired-zone-id='5' removable='false' type='flipboard-nav' w='99064' x='468' y='4314' />
+            <zone h='83628' id='5' paired-zone-id='4' removable='false' type='flipboard' w='99064' x='468' y='15487'>
+              <flipboard active-id='2' nav-type='caption' show-nav-arrows='true'>
+                <story-points>
+                  <story-point caption='Starts by gender' captured-sheet='Starts-By-Gender' id='1' />
+                  <story-point caption='Starts vs Trip Duration' captured-sheet='Starts-VS-Dur' id='2' />
+                </story-points>
+              </flipboard>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <simple-id uuid='{36F1B15F-5F57-4169-8173-E39AA1E10BA0}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Gender-Trip-Dur'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{47272D1E-9B6B-4A55-B026-06D2A2BD52E3}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{F1F64989-3F1C-46F3-8D8E-3383F2FEE107}' />
+    </window>
+    <window class='worksheet' name='Starts-VS-Dur'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{65E9EA79-D594-467D-B00A-783D277C980C}' />
+    </window>
+    <window class='worksheet' name='Start-Pop'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' type='size' />
+            <card pane-specification-id='2' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:start_date:qk]' type='color' />
+            <card pane-specification-id='2' type='map' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <map-scale-visibility value='0' />
+      </viewpoint>
+      <simple-id uuid='{FB697BC1-2750-493C-B728-FE5B45BC1512}' />
+    </window>
+    <window class='worksheet' name='Stop-Pop'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='4' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' type='size' />
+            <card pane-specification-id='4' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[cnt:stop_date:qk]' type='color' />
+            <card pane-specification-id='4' type='map' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <map-scale-visibility value='0' />
+      </viewpoint>
+      <simple-id uuid='{7A154197-B6E1-4335-8B02-4B0B03D0E78E}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:start_station_id:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F742A706-3149-4875-8B27-7547FD3757A4}' />
+    </window>
+    <window class='worksheet' name='Sheet 8'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[tmi:start_time:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <map-scale-visibility value='0' />
+      </viewpoint>
+      <simple-id uuid='{5E02EED5-C90A-4D20-8840-C03F186DF45D}' />
+    </window>
+    <window class='worksheet' name='Sheet 8 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[tmi:start_time:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <map-scale-visibility value='0' />
+      </viewpoint>
+      <simple-id uuid='{28595EE7-1419-4AB0-B15A-814B91BE55AD}' />
+    </window>
+    <window class='worksheet' name='Trip-Dur-By-Age'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{26EEB310-0FDF-4BD4-9112-D37FF098AFE7}' />
+    </window>
+    <window class='worksheet' name='Starts-By-Gender'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1mgfd5k17057kj1e3ie5r0u0sh8d].[none:gender:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DB3B3929-0822-4191-8519-1C83A30DE83D}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Start-Pop'>
+          <zoom type='entire-view' />
+          <map-scale-visibility value='0' />
+        </viewpoint>
+        <viewpoint name='Stop-Pop'>
+          <zoom type='entire-view' />
+          <map-scale-visibility value='0' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{5F692A96-F29E-4D17-94D1-3989C1D44BC6}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Story 1'>
+      <viewpoints />
+      <active id='-1' />
+      <simple-id uuid='{9C55EF48-7265-4E31-952A-1D2C7F247D55}' />
+    </window>
+    <window class='dashboard' name='Story 2'>
+      <viewpoints />
+      <active id='4' />
+      <simple-id uuid='{5230B3A7-5EA8-4581-8485-AA8062BFF393}' />
+    </window>
+  </windows>
+</workbook>
